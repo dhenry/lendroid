@@ -1,5 +1,6 @@
 package com.dhenry.lendroid.dagger.modules;
 
+import com.dhenry.lendroid.fragments.LoginFragment;
 import com.dhenry.lendroid.fragments.MainFragment;
 
 import javax.inject.Singleton;
@@ -14,7 +15,8 @@ import rx.subjects.Subject;
  */
 @Module(addsTo = MainActivityScopeModule.class,
         injects = {
-                MainFragment.class
+                MainFragment.class,
+                LoginFragment.class
         })
 public class MainFragmentScopeModule {
     @Provides @Singleton
