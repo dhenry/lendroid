@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="com.flatstack.android">
+          package="com.dhenry.lendroid">
 
     <!-- this is only for tests with Memento, which is checking the build version -->
     <uses-sdk
@@ -13,13 +13,13 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
-        android:name=".App"
+        android:name="com.dhenry.lendroid.App"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity">
+            android:name="com.dhenry.lendroid.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

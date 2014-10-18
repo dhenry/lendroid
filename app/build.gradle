@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'retrolambda'
 
 ext {
-    APPLICATION_ID = "com.flatstack.android"
+    APPLICATION_ID = "com.dhenry.lendroid"
 
     isTravis = "true".equals(System.getenv("TRAVIS"))
     preDexEnabled = "true".equals(System.getProperty("pre-dex", "true"))
