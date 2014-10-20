@@ -2,7 +2,12 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="API settings">
         <EditTextPreference
+            android:key="@string/apiKey"
             android:title="API Key"
             android:summary="Lending Club authorization key"/>
+        <EditTextPreference
+            android:key="@string/investorId"
+            android:title="Investor Id"
+            android:summary="Lending Club member Id"/>
     </PreferenceCategory>
 </PreferenceScreen>

@@ -12,5 +12,7 @@
     <string name="minus">-</string>
     <string name="plus">+</string>
     <string name="review_order">Review Order</string>
+    <string name="apiKey">apiKey</string>
+    <string name="investorId">investorId</string>
 
 </resources>

@@ -10,4 +10,8 @@ public @SharedPreferences interface Preferences {
     @Default(ofString = "API Key") public String apiKey();
 
     public void apiKey(@NotNull String apiKey);
+
+    @Default(ofString = "Investor Id") public String investorId();
+
+    public void investorId(@NotNull String investorId);
 }

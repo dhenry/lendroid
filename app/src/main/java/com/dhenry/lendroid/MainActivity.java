@@ -14,6 +14,7 @@ import com.dhenry.lendroid.dagger.modules.MainActivityScopeModule;
 import com.dhenry.lendroid.fragments.LoginFragment;
 import com.dhenry.lendroid.fragments.MainFragment;
 import com.dhenry.lendroid.fragments.PrefsFragment;
+import com.dhenry.lendroid.fragments.SummaryFragment;
 import com.dhenry.lendroid.utils.Preferences;
 import com.github.mttkay.memento.Memento;
 import com.github.mttkay.memento.MementoCallbacks;
@@ -54,7 +55,7 @@ public class MainActivity extends Activity implements MementoCallbacks, Injector
         FragmentManager fm = getFragmentManager();
         if (fm.findFragmentById(android.R.id.content) == null) {
             fm.beginTransaction()
-                    .add(android.R.id.content, new LoginFragment())
+                    .add(android.R.id.content, new SummaryFragment())
                     .commit();
         }
     }

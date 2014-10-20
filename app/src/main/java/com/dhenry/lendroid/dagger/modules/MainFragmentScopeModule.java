@@ -2,8 +2,10 @@ package com.dhenry.lendroid.dagger.modules;
 
 import com.dhenry.lendroid.fragments.LoginFragment;
 import com.dhenry.lendroid.fragments.MainFragment;
+import com.dhenry.lendroid.fragments.SummaryFragment;
 import com.dhenry.lendroid.lendingclub.LendingClubAPI;
 import com.dhenry.lendroid.lendingclub.LendingClubAuthorization;
+import com.dhenry.lendroid.lendingclub.LendingClubClient;
 import com.dhenry.lendroid.utils.Preferences;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.squareup.okhttp.OkHttpClient;
@@ -26,7 +28,8 @@ import timber.log.Timber;
 @Module(addsTo = MainActivityScopeModule.class,
         injects = {
                 MainFragment.class,
-                LoginFragment.class
+                LoginFragment.class,
+                SummaryFragment.class
         },
         library = true)
 public class MainFragmentScopeModule {
@@ -55,5 +58,12 @@ public class MainFragmentScopeModule {
                 .setLogLevel(RestAdapter.LogLevel.BASIC)
                 .build()
                 .create(LendingClubAPI.class);
+    }
+
+    @Provides @Singleton
+    LendingClubClient provideLendingClubClient(LendingClubAPI lendingClubAPI) {
+        Timber.d("creating lendingClubClient");
+
+        return new LendingClubClient(lendingClubAPI);
     }
 }

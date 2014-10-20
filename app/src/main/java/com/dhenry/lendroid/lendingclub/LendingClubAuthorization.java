@@ -1,12 +1,14 @@
 package com.dhenry.lendroid.lendingclub;
 
+import org.jetbrains.annotations.NotNull;
+
 import retrofit.RequestInterceptor;
 
 public class LendingClubAuthorization implements RequestInterceptor {
 
-    private final String key;
+    @NotNull final String key;
 
-    public LendingClubAuthorization(String key) {
+    public LendingClubAuthorization(@NotNull String key) {
         this.key = key;
     }
 
