@@ -2,6 +2,7 @@ package com.dhenry.lendroid.dagger.modules;
 
 import android.content.Context;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.dhenry.lendroid.MainActivity;
 import com.dhenry.lendroid.utils.DatabaseHelper;
@@ -20,7 +21,13 @@ import de.devland.esperandro.serialization.JacksonSerializer;
         },
         library = true)
 public class MainActivityScopeModule {
-    @Provides @Singleton ObjectMapper provideJackson() { return new ObjectMapper(); }
+
+    @Provides @Singleton ObjectMapper provideObjectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+        return objectMapper;
+    }
 
     @Provides @Singleton Preferences providePreferences(Context context,
                                                         ObjectMapper objectMapper) {

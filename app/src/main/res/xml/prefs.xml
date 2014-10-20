@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="XXXX">
-        <SwitchPreference
-            android:title="XXXX"
-            android:summary="XXXX"/>
+    <PreferenceCategory android:title="API settings">
+        <EditTextPreference
+            android:title="API Key"
+            android:summary="Lending Club authorization key"/>
     </PreferenceCategory>
 </PreferenceScreen>

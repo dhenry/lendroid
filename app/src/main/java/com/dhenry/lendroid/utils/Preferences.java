@@ -6,7 +6,8 @@ import de.devland.esperandro.annotations.Default;
 import de.devland.esperandro.annotations.SharedPreferences;
 
 public @SharedPreferences interface Preferences {
-    @Default(ofString = "XXXX") public String defaultString();
 
-    public void defaultString(@NotNull String s);
+    @Default(ofString = "API Key") public String apiKey();
+
+    public void apiKey(@NotNull String apiKey);
 }
