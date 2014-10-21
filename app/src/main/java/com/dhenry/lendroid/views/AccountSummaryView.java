@@ -7,14 +7,13 @@ import android.widget.TextView;
 
 import com.dhenry.lendroid.R;
 import com.dhenry.lendroid.lendingclub.models.AccountSummary;
-import com.dhenry.lendroid.utils.NumberFormats;
 
 import org.jetbrains.annotations.NotNull;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class SummaryView extends LinearLayout {
+public class AccountSummaryView extends LinearLayout {
 
     @InjectView(R.id.account_number) TextView accountNumber;
     @InjectView(R.id.account_total) FormattedTextView accountTotal;
@@ -24,7 +23,7 @@ public class SummaryView extends LinearLayout {
 
     @NotNull AccountSummary accountSummary;
 
-    public SummaryView(Context context, AttributeSet attributeSet) {
+    public AccountSummaryView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
     }
 

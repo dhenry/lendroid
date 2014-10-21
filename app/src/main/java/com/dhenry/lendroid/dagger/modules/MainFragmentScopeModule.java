@@ -1,8 +1,9 @@
 package com.dhenry.lendroid.dagger.modules;
 
+import com.dhenry.lendroid.fragments.AccountSummaryFragment;
 import com.dhenry.lendroid.fragments.LoginFragment;
 import com.dhenry.lendroid.fragments.MainFragment;
-import com.dhenry.lendroid.fragments.SummaryFragment;
+import com.dhenry.lendroid.fragments.NotesSummaryFragment;
 import com.dhenry.lendroid.lendingclub.LendingClubAPI;
 import com.dhenry.lendroid.lendingclub.LendingClubAuthorization;
 import com.dhenry.lendroid.lendingclub.LendingClubClient;
@@ -29,7 +30,8 @@ import timber.log.Timber;
         injects = {
                 MainFragment.class,
                 LoginFragment.class,
-                SummaryFragment.class
+                AccountSummaryFragment.class,
+                NotesSummaryFragment.class
         },
         library = true)
 public class MainFragmentScopeModule {

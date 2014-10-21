@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.dhenry.lendroid.views.SummaryView
+<com.dhenry.lendroid.views.AccountSummaryView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/summary"
     android:orientation="vertical"
@@ -121,4 +121,4 @@
 
     </LinearLayout>
 
-</com.dhenry.lendroid.views.SummaryView>
+</com.dhenry.lendroid.views.AccountSummaryView>

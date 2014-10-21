@@ -21,5 +21,8 @@
     <string name="accrued_interest">Accrued Interest</string>
     <string name="my_account">My Account #</string>
     <string name="received_interest">Received Interest</string>
+    <string name="my_notes">My Notes</string>
+    <string name="notes_count">My notes</string>
+    <string name="account_summary">Account Summary</string>
 
 </resources>
