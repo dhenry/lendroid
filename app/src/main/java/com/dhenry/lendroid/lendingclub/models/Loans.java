@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class OwnedNotes<T> {
+public class Loans {
 
-    @NotNull List<T> myNotes;
+    @NotNull String asOfDate;
+    @NotNull List<Loan> loans;
 }

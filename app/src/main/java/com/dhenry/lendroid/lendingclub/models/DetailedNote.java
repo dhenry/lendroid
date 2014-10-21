@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class DetailedOwnedNote extends OwnedNote {
+public class DetailedNote extends Note {
 
     int portfolioId;
     int	loanLength;

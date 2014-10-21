@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class OwnedNote {
+public class Note {
 
     int loanLength;
     @NotNull String loanStatus;

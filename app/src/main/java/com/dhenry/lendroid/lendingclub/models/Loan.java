@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class ListedNote {
+public class Loan {
 
     int id;
     int memberId;
