@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.dhenry.lendroid.views.SummaryView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/summary"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.dhenry.lendroid.views.CurrencyTextView
+            android:id="@+id/account_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+</com.dhenry.lendroid.views.SummaryView>

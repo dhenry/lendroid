@@ -6,7 +6,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.dhenry.lendroid.R;
 import com.dhenry.lendroid.dagger.Dagger;
@@ -16,6 +15,7 @@ import com.dhenry.lendroid.lendingclub.LendingClubClient;
 import com.dhenry.lendroid.lendingclub.models.AccountSummary;
 import com.dhenry.lendroid.utils.ActionBars;
 import com.dhenry.lendroid.utils.Preferences;
+import com.dhenry.lendroid.views.SummaryView;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -33,8 +33,8 @@ import timber.log.Timber;
 
 public class SummaryFragment extends ScopedFragment {
 
-    /*@InjectView(R.id.ptr_layout)*/ SwipeRefreshLayout swipeRefreshLayout;
-//    @InjectView(R.id.grid)       AbsListView         gridView;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private SummaryView summaryView;
 
     @Inject Lazy<LendingClubClient> lendingClubClient;
 
@@ -48,8 +48,8 @@ public class SummaryFragment extends ScopedFragment {
                                                        @NotNull ViewGroup container,
                                                        @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.main, container, false);
-        ButterKnife.inject(this, view);
+        summaryView = (SummaryView)inflater.inflate(R.layout.summary, container, false);
+        ButterKnife.inject(this, summaryView);
 
         swipeRefreshLayout = new SwipeRefreshLayout(container.getContext());
 
@@ -58,7 +58,7 @@ public class SummaryFragment extends ScopedFragment {
 
         // Add the fragment's content view to the SwipeRefreshLayout, making sure that it fills
         // the SwipeRefreshLayout
-        swipeRefreshLayout.addView(view,
+        swipeRefreshLayout.addView(summaryView,
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
         // Make sure that the SwipeRefreshLayout will fill the fragment
@@ -101,8 +101,7 @@ public class SummaryFragment extends ScopedFragment {
     void updateView() {
         if (getView() != null && lastResult != null && getActivity() != null) {
             swipeRefreshLayout.setRefreshing(false);
-//            gridView.setAdapter(new SummaryAdapter(getLayoutInflater(null), lastResult));
-            Toast.makeText(getScopedContext(), lastResult.getAccountTotal().toPlainString(), Toast.LENGTH_LONG).show();
+            summaryView.draw(lastResult);
         }
     }
 
