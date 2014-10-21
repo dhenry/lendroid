@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Notes<T> {
+public class Notes<T extends Note> {
 
     @NotNull List<T> myNotes;
 }

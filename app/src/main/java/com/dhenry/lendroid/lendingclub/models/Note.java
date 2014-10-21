@@ -4,7 +4,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Data
@@ -24,4 +26,17 @@ public class Note {
     @NotNull String orderDate;
     @NotNull String loanStatusDate;
     @NotNull BigDecimal paymentsReceived;
+
+
+    public static final String A = "A";
+
+    public enum Grade {
+        A("A"), B("B"), C("C"), D("D"), E("E"), F("F"), G("G");
+
+        @NotNull @Getter String value;
+
+        Grade(@NotNull String value) {
+            this.value = value;
+        }
+    }
 }

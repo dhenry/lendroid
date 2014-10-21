@@ -1,8 +1,7 @@
 package com.dhenry.lendroid.lendingclub;
 
 import com.dhenry.lendroid.lendingclub.models.AccountSummary;
-import com.dhenry.lendroid.lendingclub.models.Note;
-import com.dhenry.lendroid.lendingclub.models.Notes;
+import com.dhenry.lendroid.processor.NoteOrganizer;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -23,8 +22,8 @@ public class LendingClubClient {
         return observableFrom(() -> lendingClubAPI.getAccountSummary(investorId));
     }
 
-    public Observable<Notes<Note>> getNotes(String investorId) {
-        return observableFrom(() -> lendingClubAPI.getNotes(investorId));
+    public Observable<NoteOrganizer> getNotes(String investorId) {
+        return observableFrom(() -> new NoteOrganizer(lendingClubAPI.getNotes(investorId)));
     }
 
     <T> Observable<T> observableFrom(Func0<T> func) {

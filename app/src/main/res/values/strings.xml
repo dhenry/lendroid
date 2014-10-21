@@ -24,5 +24,13 @@
     <string name="my_notes">My Notes</string>
     <string name="notes_count">My notes</string>
     <string name="account_summary">Account Summary</string>
+    <string name="a_grade_notes">A</string>
+    <string name="b_grade_notes">B</string>
+    <string name="c_grade_notes">C</string>
+    <string name="d_grade_notes">D</string>
+    <string name="e_grade_notes">E</string>
+    <string name="f_grade_notes">F</string>
+    <string name="g_grade_notes">G</string>
+    <string name="by_grade">By Grade</string>
 
 </resources>

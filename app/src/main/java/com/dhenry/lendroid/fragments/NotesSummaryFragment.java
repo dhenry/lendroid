@@ -10,8 +10,7 @@ import com.dhenry.lendroid.R;
 import com.dhenry.lendroid.dagger.Dagger;
 import com.dhenry.lendroid.dagger.modules.MainFragmentScopeModule;
 import com.dhenry.lendroid.lendingclub.LendingClubClient;
-import com.dhenry.lendroid.lendingclub.models.Note;
-import com.dhenry.lendroid.lendingclub.models.Notes;
+import com.dhenry.lendroid.processor.NoteOrganizer;
 import com.dhenry.lendroid.utils.ActionBars;
 import com.dhenry.lendroid.utils.Preferences;
 import com.dhenry.lendroid.views.NotesSummaryView;
@@ -41,7 +40,7 @@ public class NotesSummaryFragment extends SwipeRefreshFragment {
 
     @Nullable Subscription subscription;
 
-    @Nullable Notes<Note> lastResult;
+    @Nullable NoteOrganizer lastResult;
 
     @NotNull @Override protected View createScopedView(@NotNull LayoutInflater inflater,
                                                        @NotNull ViewGroup container,
@@ -88,7 +87,7 @@ public class NotesSummaryFragment extends SwipeRefreshFragment {
         }
     }
 
-    Observable<Notes<Note>> createNewNotesObservable() {
+    Observable<NoteOrganizer> createNewNotesObservable() {
         return lendingClubClient.get().getNotes(prefs.investorId())
                 .subscribeOn(Schedulers.io());
     }
