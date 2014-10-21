@@ -11,17 +11,19 @@ import com.dhenry.lendroid.utils.NumberFormats;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 
-public final class CurrencyTextView extends TextView
+public final class FormattedTextView extends TextView
 {
     private BigDecimal amount = null;
+    @NotNull private NumberFormat formatter = NumberFormats.CURRENCY_FORMAT;
 
-    public CurrencyTextView(final Context context)
+    public FormattedTextView(final Context context)
     {
         super(context);
     }
 
-    public CurrencyTextView(final Context context, final AttributeSet attrs)
+    public FormattedTextView(final Context context, final AttributeSet attrs)
     {
         super(context, attrs);
     }
@@ -45,12 +47,16 @@ public final class CurrencyTextView extends TextView
         final Editable text;
 
         if (amount != null) {
-            text = new SpannableStringBuilder(NumberFormats.CURRENCY_FORMAT.format(amount));
+            text = new SpannableStringBuilder(formatter.format(amount));
         }
         else {
             text = null;
         }
 
         setText(text);
+    }
+
+    public void setFormatter(@NotNull NumberFormat formatter) {
+        this.formatter = formatter;
     }
 }

@@ -14,5 +14,12 @@
     <string name="review_order">Review Order</string>
     <string name="apiKey">apiKey</string>
     <string name="investorId">investorId</string>
+    <string name="account_value">Account Value</string>
+    <string name="available_cash">Available Cash</string>
+    <string name="past_due_notes_adj">Adjustment for Past-Due Notes</string>
+    <string name="adjusted_account_value">Adjusted Account Value</string>
+    <string name="accrued_interest">Accrued Interest</string>
+    <string name="my_account">My Account #</string>
+    <string name="received_interest">Received Interest</string>
 
 </resources>
